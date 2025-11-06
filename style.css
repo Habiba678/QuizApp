@@ -47,3 +47,9 @@ body{
     font-size: 38px;
     margin-bottom: 32px;
 }
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
