@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,37 +14,61 @@
 </head>
 
 <body onload="init()">
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">QuizApp</span> 
-        </div>
-    </nav>
+    <div class="frame">
 
-    <div class="container">
+        <!-- Sidebar links -->
+        <header>
+            <div class="logo-container">
+                <img class="logo" src="/img/Quizapp 2/logo.png" alt="Logo">
+                
+            </div>
+
+            <nav class="navbar">
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">JavaScript</a>
+            </nav>
+        </header>
+
+        <!-- Quiz rechts -->
         <div class="card quiz-card">
-            <img src="img/pencil.jpg" id="header-image" class="card-img-top">
+            <!-- Bild oben -->
+            <img src="img/Quizapp 2/brainbg.jpg" id="header-image" class="card-img-top">
 
+           <!-- mit 25 % -->
             <div class="progress">
-              <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;">25%</div>
+                <div
+                    class="progress-bar"
+                    id="progress-bar"
+                    role="progressbar"
+                    style="width: 25%;"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                    25%
+                </div>
             </div>
 
+            <!-- Endscreen -->
             <div class="card-body" id="endScreen" style="display: none;">
-              <div class="text-center final-headline">Quiz beendet!
+                <div class="text-center final-headline">Quiz beendet!</div>
+
+                <div class="text-center">
+                    Du hast
+                    <b id="count-of-right-questions">0</b>
+                    von
+                    <b id="count-of-questions">0</b>
+                    Fragen richtig beantwortet.
+                </div>
+
+                <div class="button-row">
+                    <button onclick="restartGame()" class="btn btn-primary">
+                        Erneut spielen
+                    </button>
+                </div>
             </div>
 
-            
-            <div class="text-center">
-            Du hast <b id="count-of-right-questions">xxx</b> Fragen von <b id="count-of-questions">xxx</b> richtig beantwortet.
-     </div>
-       
-
-       <div class="button-row">
-        <button onclick="restartGame()" class="btn btn-primary">
-            Erneut spielen
-        </button>
-        </div>
-    </div>
-
+            <!-- Fragen-Ansicht -->
             <div class="card-body" id="questionBody">
                 <h5 class="card-title" id="questiontext">Frage</h5>
 
@@ -66,15 +90,16 @@
 
                 <div class="question-footer">
                     <span>
-                        <b id="question-nummer">1</b> von <b id="all-questions">7</b> Fragen
+                        <b id="question-nummer">1</b> von
+                        <b id="all-questions">7</b> Fragen
                     </span>
-                    <!-- ✅ hier war mein Tippfehler -->
                     <button onclick="nextQuestion()" class="btn btn-primary" id="next-button" disabled>
                         Nächste Frage
                     </button>
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 </html>
